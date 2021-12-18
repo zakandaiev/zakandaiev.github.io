@@ -1,0 +1,56 @@
+/*==========  Desktop First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width: 800px)
+	// Top panel
+	.top-panel-wrapper
+		.top-panel
+			width 90%
+			div
+				margin .5rem 0rem
+			.social-icons
+				a
+					margin: 0 .2rem
+	@media only screen and (max-height : 600px)
+		.top-panel-wrapper
+			position relative
+			display table-row
+	// Sections
+	.section
+		h1, h2
+			font-size 2.4rem
+		h3
+			font-size 1.3rem
+		p
+			font-size 1rem
+	// Scroll down on Home section
+	@media only screen and (max-height : 600px)
+		.scroll-down
+			display none
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px)
+	// Top panel
+	.top-panel-wrapper
+		.top-panel
+			justify-content center
+			div
+				margin .5rem 1rem
+	// Download button
+	.download-btn
+		line-height 1.2
+	// Disable parallax
+	#skills
+		background-attachment scroll
+	#dark-theme #skills
+		background-attachment scroll

@@ -1,0 +1,86 @@
+#home
+	background-image linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%)
+	.top-panel-wrapper
+		animation-delay .5s
+		animation-duration 1s
+		animation-fill-mode both
+		animation-name fadeIn
+	.content-wrapper
+		animation-duration 1s
+		animation-fill-mode both
+		animation-name bounceInRight
+
+.top-panel-wrapper
+	position absolute
+	width 100%
+	height auto
+	top 0
+	left 0
+	margin .5em auto
+	z-index 9
+	.top-panel
+		width 60%
+		height auto
+		margin 0 auto
+		display flex
+		flex-flow row wrap
+		justify-content space-between
+		//align-items center
+		//align-content center
+		.toggle-colormode
+			input[type=checkbox]
+				display none
+			input:checked + label
+				background #3f3f3f
+				&::after
+					left calc(100% - 5px)
+					transform translateX(-100%)
+			label
+				cursor pointer
+				text-indent -9999px
+				width 55px
+				height 30px
+				background #2c2c2c
+				display inline-block
+				border-radius 100px
+				position relative
+				&::after
+					content ''
+					position absolute
+					top 5px
+					left 5px
+					width 20px
+					height 20px
+					background #fff
+					border-radius 30px
+					transition 0.3s
+				&:active::after
+					width 22px
+			i
+				display inline-block
+				width 30px
+				height 30px
+				mask-image url(../img/toggle-theme-icons.svg)
+				margin 0 5px
+			.sun-icon
+				background-color #ffdc00
+				mask-position 0px 0px
+				transition background-color 1s ease-out
+			.moon-icon
+				background-color #959595
+				mask-position 30px 0px
+				transition background-color 1s ease-out
+		.soc-icons
+			a
+				margin 0
+				svg:hover
+					#facebook
+						fill #3b5998
+					.youtube
+						fill #FF0000
+					#github
+						fill #24292e
+					.codepen
+						fill #24292e
+					#envelope
+						fill #e0474c

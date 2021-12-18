@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>Oleksandr Zakandaiev - Junior Frontend Developer</title>
+	<meta name="description" content="My name is Oleksandr Zakandaiev and I'm Junior Front-end Developer. I love to create beautiful, simple and fast websites that are equally accessible on all devices">
+	<meta name="keywords" content="Oleksandr Zakandaiev, Zakandaiev, website developer, frontend developer">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	
+	<link rel="icon" href="favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="favicon-180x180.png">
+
+	<link rel="stylesheet" href="css/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700|Orbitron" rel="stylesheet">
+
+</head>
+
+<body>
+
+	<div class="loader">Loading...</div>
+	<div class="loader-content">
+		//= template/vertical-nav.html
+		//= template/sec-home.html
+		//= template/sec-about.html
+		//= template/sec-skills.html
+		//= template/sec-portfolio.html
+		//= template/sec-contact.html
+		<div id="alert-toolbar">
+			Hi! This site is deprecated. The new one is available at <a href="https://zakandaiev.pp.ua">zakandaiev.pp.ua</a> ;)
+		</div>
+		<div id="copyright">
+			<p>Copyright &copy;<script>document.write(" "+new Date().getFullYear()+" ");</script> made with ❤ by Oleksandr Zakandaiev</p>
+		</div>
+	</div>
+
+	<script src="js/main.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('.loader-content').removeClass();
+			$('.loader').fadeOut();
+		});		
+	</script>
+
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-146372308-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-146372308-1');
+	</script>
+</body>
+
+</html>

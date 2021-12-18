@@ -1,0 +1,10 @@
+$default-font = "Roboto", sans-serif
+$orbitron-font = 'Orbitron', sans-serif
+$accent = #e0474c
+$dark-theme-color = #eaf2e3
+
+text-color(clr)
+	if clr == light
+		color: darken(#fff, 15%)
+	if clr == dark
+		color: lighten(#000, 15%)

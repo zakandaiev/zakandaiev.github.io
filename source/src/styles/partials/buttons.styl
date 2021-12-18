@@ -1,0 +1,30 @@
+// Global
+.button
+	display inline-block
+	position relative
+	background $accent
+	text-color(light)
+	border none
+	outline none
+	text-align center
+	padding .5rem 2rem
+	font-family inherit
+	font-weight 300
+	font-size 1.5rem
+	text-transform uppercase
+	cursor pointer
+	transition all .25s ease-out
+	&:hover
+		box-shadow 0 0 8px rgba(0, 0, 0, 0.6)
+	&:active
+		background-color lighten($accent, 10%)
+		transform scale(0.9)
+
+// Submit Button
+.submit-btn
+	@extend .button
+
+// Portfolio open Button
+.open-portfolio-btn
+	@extend .button
+	margin-top 3rem

@@ -1,0 +1,70 @@
+#skills
+	background-image url("../img/skills/background.jpg")
+	background-attachment fixed
+	background-size cover
+	background-position center
+
+//Skills Grid
+.skills-grid
+	margin 2rem 0
+	display flex
+	flex-flow row wrap
+	justify-content center
+	align-items center
+	align-content center
+	.circle
+		position relative
+		display block
+		width 170px
+		height 170px
+		padding 2rem
+		margin 0 0.5rem 1rem
+		background #eaf2e3
+		border-radius 50%
+		box-shadow inset 0px 0px 10px rgba(0,0,0,0.9)
+		i
+			background url(../img/skills/sprite.svg) no-repeat center center
+			display inline-block
+			vertical-align middle
+			width 100px
+			height 100px
+			&.skill-html5
+				background-position 0px 0px
+			&.skill-css3
+				background-position -100px 0px
+			&.skill-bootstrap
+				background-position -200px 0px
+			&.skill-stylus
+				background-position -300px 0px
+			&.skill-gulp
+				background-position -400px 0px
+			&.skill-javascript
+				background-position -500px 0px
+			&.skill-jquery
+				background-position -600px 0px
+			&.skill-php
+				background-position -700px 0px
+			&.skill-wordpress
+				background-position -800px 0px
+			&.skill-woocommerce
+				background-position -900px 0px
+			&.skill-photoshop
+				background-position -1000px 0px
+			&.skill-materialize
+				background-position -1100px 0px
+			&.skill-sass
+				background-position -1200px 0px
+		figcaption
+			position absolute
+			color rgba(0, 0, 0, .8)
+			font-weight 400
+			font-size .9rem
+			left 0
+			right 0
+			bottom -1.5rem
+			opacity 0
+			text-align center
+			transition all .25s
+		&:hover figcaption
+			opacity 1
+			bottom 1rem

@@ -1,0 +1,247 @@
+/*==========  Vertical navigation  ==========*/
+.vertical-nav {
+  position: fixed;
+  z-index: 99;
+  right: 5%;
+  bottom: 30px;
+  width: 90%;
+  max-width: 400px;
+  max-height: 90%;
+  overflow-y: auto;
+  transform: scale(0);
+  transform-origin: right bottom;
+  transition: transform 0.2s;
+  border-radius: 0.25em;
+  background-color: rgba(234, 242, 227, 0.9);
+}
+.vertical-nav a {
+  display: block;
+  padding: 1em;
+  color: #1C1C1C;
+  font-weight: 400;
+  border-bottom: 1px solid rgba(58, 44, 65, 0.1);
+}
+.vertical-nav a.active {
+  color: $accent;
+}
+.vertical-nav.open {
+  transform: scale(1);
+  -webkit-overflow-scrolling: touch;
+}
+.vertical-nav.open + .nav-trigger {
+  background-color: transparent;
+}
+.vertical-nav.open + .nav-trigger span::before {
+  background-color: #1C1C1C;
+}
+.vertical-nav.open + .nav-trigger span::after {
+  background-color: #1C1C1C;
+}
+.vertical-nav.open + .nav-trigger span::before, .vertical-nav.open + .nav-trigger span::after {
+  /* transform dots in 'X' icon */
+  height: 3px;
+  width: 20px;
+  border-radius: 0;
+  left: -8px;
+}
+.vertical-nav.open + .nav-trigger span::before {
+  transform: rotate(45deg);
+  top: 1px;
+}
+.vertical-nav.open + .nav-trigger span::after {
+  transform: rotate(135deg);
+  bottom: 0;
+}
+@media only screen and (min-width: 800px) {
+  .vertical-nav {
+    /* reset style */
+    right: 0;
+    top: 0;
+    bottom: auto;
+    height: 100vh;
+    width: 90px;
+    max-width: none;
+    max-height: none;
+    transform: scale(1);
+    background-color: transparent;
+    /* vertically align its content*/
+    display: table;
+  }
+  .vertical-nav::before {
+    /* this is the navigation background */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    transform: translateX(100%);
+    transition: transform 0.4s;
+  }
+  .vertical-nav:hover::before {
+    transform: translateX(0);
+  }
+  .vertical-nav ul {
+    /* vertically align <ul> inside <nav>*/
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+  }
+  .vertical-nav a {
+    position: relative;
+    padding: 3em 0 0;
+    margin: 1.4em auto;
+    border-bottom: none;
+    font-size: 1.2rem;
+	font-weight: 100;
+    color: #eaf2e3;
+  }
+  .vertical-nav a.active {
+    color: #eaf2e3;
+  }
+  .vertical-nav a::before, .vertical-nav a::after {
+    /* used to create the filled circle and the background icon */
+    content: '';
+    position: absolute;
+    left: 50%;
+    /* Force Hardware Acceleration */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+  }
+  .vertical-nav a::before {
+    /* filled circle */
+    top: 0;
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    background: #000;
+    transform: translateX(-50%) scale(0.25);
+    transition: transform 0.4s, background-color 0.2s;
+  }
+  .vertical-nav a::after {
+    /* icon */
+    opacity: 0;
+    top: 8px;
+    height: 16px;
+    width: 20px;
+    background: url(../img/nav-icons.svg) no-repeat;
+    transform: translateX(-50%) scale(0);
+    transition: transform 0.4s 0s, opacity 0.1s 0.3s;
+  }
+  .vertical-nav:hover.vertical-nav a::before {
+	  background: #eaf2e3;
+  }
+  .vertical-nav a.active::before, .vertical-nav a:hover::before, .vertical-nav:hover.vertical-nav a:hover::before, .vertical-nav:hover.vertical-nav a.active::before {
+    background: $accent;
+  }
+  .vertical-nav li:first-of-type a::after {
+    background-position: 0px 0px;
+    /* fix bug with transitions - set scale(0.01) rather than scale(0) */
+    transform: translateX(-50%) translateY(4.5em) scale(0.01);
+  }
+  .vertical-nav li:first-of-type a::before {
+    transform: translateX(-50%) translateY(4.5em) scale(0.25);
+  }
+  .vertical-nav li:nth-of-type(2) a::after {
+    background-position: -20px 0px;
+    transform: translateX(-50%) translateY(1.5em) scale(0.01);
+  }
+  .vertical-nav li:nth-of-type(2) a::before {
+    transform: translateX(-50%) translateY(1.5em) scale(0.25);
+  }
+  .vertical-nav li:nth-of-type(3) a::after {
+    background-position: -40px 0px;
+    transform: translateX(-50%) translateY(-1.5em) scale(0.01);
+  }
+  .vertical-nav li:nth-of-type(3) a::before {
+    transform: translateX(-50%) translateY(-1.5em) scale(0.25);
+  }
+  .vertical-nav li:nth-of-type(4) a::after {
+    background-position: -60px 0px;
+    transform: translateX(-50%) translateY(-4.5em) scale(0.01);
+  }
+  .vertical-nav li:nth-of-type(4) a::before {
+    transform: translateX(-50%) translateY(-4.5em) scale(0.25);
+  }
+  .vertical-nav li:nth-of-type(5) a::after {
+    background-position: -80px 0px;
+    transform: translateX(-50%) translateY(-7.5em) scale(0.01);
+  }
+  .vertical-nav li:nth-of-type(5) a::before {
+    transform: translateX(-50%) translateY(-7.5em) scale(0.25);
+  }
+  .vertical-nav .label {
+    display: block;
+    /* Force Hardware Acceleration */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    transform: translateX(100%);
+    transition: transform 0.4s;
+  }
+  .vertical-nav:hover a::before, .vertical-nav:hover a::after, .vertical-nav:hover li:nth-of-type(n) a::before, .vertical-nav:hover li:nth-of-type(n) a::after {
+    transform: translateX(-50%) scale(1);
+  }
+  .vertical-nav:hover a::after {
+    opacity: 1;
+    transition: transform 0.4s, opacity 0s;
+  }
+  .vertical-nav:hover .label, .touch .vertical-nav .label {
+    transform: translateX(0);
+  }
+}
+
+
+/*==========  Nav trigga  ==========*/
+.nav-trigger {
+  display: block;
+  position: fixed;
+  z-index: 999;
+  bottom: 30px;
+  right: 5%;
+  height: 44px;
+  width: 44px;
+  border-radius: 0.25em;
+  background: rgba(0, 0, 0, 0.9);
+  /* reset button style */
+  cursor: pointer;
+  appearance: none;
+  border: none;
+  outline: none;
+}
+.nav-trigger span {
+  /* central dot */
+  position: absolute;
+  height: 4px;
+  width: 4px;
+  background-color: #eaf2e3;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  bottom: auto;
+  right: auto;
+  transform: translateX(-50%) translateY(-50%);
+}
+.nav-trigger span::before, .nav-trigger span::after {
+  /* bottom and top dots */
+  content: '';
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #eaf2e3;
+  border-radius: inherit;
+}
+.nav-trigger span::before {
+  top: -9px;
+}
+.nav-trigger span::after {
+  bottom: -9px;
+}
+@media only screen and (min-width: 800px) {
+  .nav-trigger {
+    display: none;
+  }
+}

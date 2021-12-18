@@ -1,0 +1,84 @@
+#contact
+	background-image linear-gradient(to top, #dfe9f3 0%, white 100%)
+
+// Contact Form
+$form-text-color = #999
+
+.contact-form 
+	max-width 680px
+	position relative
+	margin 1em auto 6em
+	.legend
+		text-align left
+		font-size 1rem
+		margin 2rem 0 -0.5rem
+		color $form-text-color
+	.form-group
+		margin-top 1em
+		.form-control
+			width 100%
+			float left
+			color $form-text-color
+			padding 1rem 2rem
+			margin-bottom 1em
+			border 1px solid $form-text-color
+		&:nth-of-type(1) .form-control
+			margin-right 4%
+		&:nth-of-type(1) .form-control,
+		&:nth-of-type(2) .form-control
+			width 48%
+		input:invalid:not(:placeholder-shown) {border-color: red;}
+		input:valid:not(:placeholder-shown) {border-color: green;}
+		textarea:invalid:not(:placeholder-shown) {border-color: red;}
+		textarea:valid:not(:placeholder-shown) {border-color: green;}
+		.form__error
+			color red
+			text-align right
+			font-size 12px
+			display block
+			margin-top 3px
+			margin-bottom 3px
+			display none
+		input:invalid:not(:placeholder-shown) + .form__error
+			display block
+		#the-counter
+			width 100%
+			display inline-block
+			text-align right
+			color $form-text-color
+			padding 0.1rem 0
+			font-size 1.0rem
+	// Contact Form Spinner
+	#form-spinner
+		position absolute
+		top 40%
+		transform translateY(-60%)
+		left 50%
+		transform translateX(-50%)
+		width auto
+		height auto
+		display none
+		.spinner
+			color #e0474c
+			&::after
+				animation: changeContent .8s linear infinite;
+				content: "⠋";
+				font-size: 80px;
+		.alert-thx
+			padding 1rem
+			background #fff
+			box-shadow 0px 0px 50px #000
+			border-radius 5px
+			display none
+
+@keyframes changeContent {
+	10% { content: "⠙"; }
+	20% { content: "⠹"; }
+	30% { content: "⠸"; }
+	40% { content: "⠼"; }
+	50% { content: "⠴"; }
+	60% { content: "⠦"; }
+	70% { content: "⠧"; }
+	80% { content: "⠇"; }
+	90% { content: "⠏"; }
+}
